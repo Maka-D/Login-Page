@@ -1,0 +1,30 @@
+﻿@*@model IEnumerable<Squad3.AppService.UsersInfoAppService.DTOs.UsersInfoOutput>*@
+@model Squad3.AppService.UsersInfoAppService.DTOs.UsersInfoOutput
+@using Squad3.Core
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/Js/UserIndex.js"></script>
+
+    <h1>@Model.Id.</h1>
+    <p>@Model.Username.</p>
+    <p>@Model.Email.</p>
+    <p>@Model.CreationTime.</p>
+
+<p style="text-align:center; top-margin=300px; color:red;" id="errorProf"></p>
+
+<form id="profForm">
+    <input type="text" name="Name" placeholder="Name" id="nam" />
+    <input type="text" name="Surname" placeholder="Surname" id="sur" />
+    <input type="number" min="1" name="Age" placeholder="Age" id="age" />
+    <select name="Gender" id="gender">
+        <option value="" disabled selected hidden>Gender</option>
+        @foreach (var item in Enum.GetValues(typeof(GenderEnum)))
+        {
+            <option value="@item">@item</option>
+        }
+    </select>
+    <input type="button" value="Submit" id="submitProf" />
+    <input id="e" value="@Model.Id" style="display:none;" />
+</form>

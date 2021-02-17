@@ -1,0 +1,60 @@
+﻿@{
+    Layout = "Shared/_Layout";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="/Css/UserIndex.css" />
+
+<p style="text-align:center; color:red;" id="error"></p>
+<p style="text-align:center; color:green;" id="ok"></p>
+
+<form style="max-width:500px; margin:auto; display:none;" id="Reg">
+    <h2 style="text-align: center">Register Form</h2>
+    <div class="input-container">
+        <i class="fa fa-user icon"></i>
+        <input class="input-field" type="text" placeholder="Username" name="usrnm">
+    </div>
+
+    <div class="input-container">
+        <i class="fa fa-envelope icon"></i>
+        <input class="input-field" type="text" placeholder="Email" name="email">
+    </div>
+
+    <div class="input-container">
+        <i class="fa fa-key icon"></i>
+        <input class="input-field" type="password" placeholder="Password" name="psw">
+    </div>
+
+    <div class="input-container">
+        <i class="fa fa-key icon"></i>
+        <input class="input-field" type="password" placeholder="Repeat Password" name="psw1">
+    </div>
+
+    <button type="button" class="btn btn-warning" id="submit">Register</button>
+    <hr />
+    <button type="button" class="btn btn-success" id="submit1">Login</button>
+</form>
+
+<form action="/User/Login" method="post" style="max-width:500px; margin:auto;" id="Login">
+    <h2 style="text-align: center">Log In</h2>
+    <div class="input-container">
+        <i class="fa fa-user icon"></i>
+        <input class="input-field" type="text" placeholder="Username" name="usrnmLog">
+    </div>
+
+    <div class="input-container">
+        <i class="fa fa-key icon"></i>
+        <input class="input-field" type="password" placeholder="Password" name="pswLog">
+    </div>
+
+    <button type="submit" class="btn btn-success" id="submitLog">Login</button>
+    <hr />
+    <button type="button" class="btn btn-warning" id="submitReg">Register</button>
+
+    @if( ViewBag.error != null)
+    {
+        <p> @ViewBag.error </p>
+    }
+
+</form>
